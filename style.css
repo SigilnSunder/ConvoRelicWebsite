@@ -1,0 +1,327 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@700&display=swap');
+
+:root {
+  /* Colors */
+  --color-bg: #F5F5F5;
+  --color-bg-accent: #527A84;
+  --color-text: #5C3A28;
+  --color-text-accent: #A58199;
+  --color-action: #DC7F70;
+  --color-ui-secondary: #AF9784;
+  --color-white: #FFFFFF;
+  --color-border: #E0C9AA;
+
+  /* Fonts */
+  --font-headings: 'Playfair Display', serif;
+  --font-body: 'Lato', sans-serif;
+
+  /* Sizing */
+  --container-width: 1100px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-headings);
+  line-height: 1.2;
+}
+
+h1 { font-size: 3rem; }
+h2 { font-size: 2.5rem; text-align: center; margin-bottom: 2rem; }
+h3 { font-size: 1.5rem; }
+h4 { font-size: 1.2rem; }
+
+p {
+  margin-bottom: 1rem;
+}
+
+a {
+  color: var(--color-action);
+  text-decoration: none;
+}
+
+.container {
+  width: 90%;
+  max-width: var(--container-width);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Hero Section Styles */
+.hero-section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start; /* Aligns content to the left */
+  padding: 2rem 5%; /* Adds padding from the edge */
+  position: relative;
+  background-image: linear-gradient(rgba(44, 32, 23, 0.6), rgba(44, 32, 23, 0.7)), url('images/GroupShot.webp');
+  background-size: cover;
+  background-position: center;
+  color: var(--color-white);
+  text-align: left; /* Aligns text to the left */
+}
+
+.hero-section .logo {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  font-family: var(--font-headings);
+  font-size: 1.5rem;
+  color: var(--color-white);
+  font-weight: 700;
+}
+
+.hero-content {
+    max-width: 50%; /* Restricts the text block to the left third */
+}
+
+.hero-content h1 {
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+  font-size: 4rem; /* Increased font size */
+  margin-bottom: 0.5rem;
+}
+
+.hero-content .tagline {
+  font-size: 1.5rem; /* Increased font size */
+  font-style: italic;
+  opacity: 0.9;
+  margin-bottom: 2rem;
+}
+
+.cta-button {
+  display: inline-block;
+  background-color: var(--color-action);
+  color: var(--color-white);
+  font-family: var(--font-body);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #c96758;
+  transform: translateY(-3px);
+}
+
+/* How It Works Section */
+#how-it-works {
+  padding: 5rem 0;
+  background-color: var(--color-bg-accent);
+}
+
+#how-it-works h2,
+#how-it-works h3,
+#how-it-works p {
+  color: var(--color-white);
+}
+
+#how-it-works h2 {
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.step {
+  text-align: center;
+  padding: 1.5rem;
+}
+
+.step i {
+  font-size: 3rem;
+  color: var(--color-action);
+  margin-bottom: 1.5rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  width: 6rem;
+  height: 6rem;
+  line-height: 6rem;
+  border-radius: 50%;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.step:hover i {
+  transform: scale(1.1);
+  color: var(--color-white);
+  background-color: var(--color-action);
+}
+
+.step h3 {
+  margin-bottom: 0.5rem;
+}
+
+.step p {
+  opacity: 0.9;
+  margin-bottom: 0;
+}
+
+/* Photo Gallery Styles */
+#gallery {
+    padding: 5rem 0;
+}
+
+.photo-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.gallery-item {
+    background-color: var(--color-white);
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.item-caption {
+    padding: 1.5rem;
+}
+
+.item-caption h3 {
+    margin-bottom: 0.5rem;
+}
+
+.item-caption p {
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 0;
+}
+
+
+/* Ideas Signup Section Styles */
+#ideas-signup {
+  background-color: var(--color-bg-accent);
+  color: var(--color-white);
+  padding: 5rem 0;
+  text-align: center;
+}
+
+.signup-prompt {
+  font-family: var(--font-headings);
+  font-size: 1.75rem;
+  line-height: 1.7;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2.5rem;
+  opacity: 0.95;
+}
+
+.ideas-form {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.ideas-form textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-family: var(--font-body);
+  resize: vertical;
+  margin-bottom: 1rem;
+}
+
+.email-submit-group {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.email-submit-group input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-family: var(--font-body);
+}
+
+.ideas-form button {
+  background-color: var(--color-action);
+  color: var(--color-white);
+  border: none;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  padding: 0.75rem 1.5rem;
+  white-space: nowrap;
+}
+
+.ideas-form button:hover {
+  background-color: #c96758;
+}
+
+/* Footer */
+footer {
+  padding: 2rem 0;
+  text-align: center;
+  background-color: #e0e0e0;
+  color: var(--color-text-accent);
+  font-size: 0.9rem;
+}
+
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+  .photo-gallery-grid {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 768px) {
+  .hero-content {
+      max-width: 80%; /* Allow more width on smaller screens */
+  }
+
+  .hero-content h1 {
+      font-size: 3rem; /* Adjust font size for mobile */
+  }
+
+  .steps-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  h2 { font-size: 2.5rem; }
+
+  .signup-prompt {
+    font-size: 1.5rem;
+  }
+}
