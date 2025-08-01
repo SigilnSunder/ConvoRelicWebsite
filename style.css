@@ -1,5 +1,5 @@
 /* Import Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap');
 
 :root {
   /* Colors */
@@ -14,7 +14,6 @@
 
   /* Fonts */
   --font-headings: 'Playfair Display', serif;
-  /* UPDATED FONT */
   --font-body: "Helvetica Neue", Helvetica, Arial, sans-serif;
 
   /* Sizing */
@@ -43,6 +42,17 @@ h1, h2, h3, h4 {
   line-height: 1.2;
 }
 
+/* Specific overrides for Helvetica Neue */
+#why h2,
+#how-it-works h2,
+#gallery h2,
+#how-it-works .step h3,
+.hero-content h1,
+.hero-content .tagline {
+    font-family: var(--font-body);
+}
+
+
 h1 { font-size: 3rem; }
 h2 { font-size: 2.5rem; text-align: center; margin-bottom: 2rem; }
 h3 { font-size: 1.5rem; }
@@ -70,14 +80,16 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
+  /* UPDATED: This is the key change for horizontal centering */
+  align-items: center; 
   padding: 2rem 5%;
   position: relative;
-  background-image: linear-gradient(rgba(44, 32, 23, 0.6), rgba(44, 32, 23, 0.7)), url('images/Heroimage.png');
+  background-image: linear-gradient(rgba(44, 32, 23, 0.6), rgba(44, 32, 23, 0.7)), url('images/CRHeroImage.png');
   background-size: cover;
   background-position: center;
   color: var(--color-white);
-  text-align: left;
+  /* UPDATED: This ensures the text inside the block is centered */
+  text-align: center;
 }
 
 .hero-section .logo {
@@ -91,12 +103,8 @@ a {
 }
 
 .hero-content {
-    max-width: 50%;
-}
-
-.hero-content h1,
-.hero-content .tagline {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    /* No longer needed with center alignment */
+    max-width: 100%;
 }
 
 .hero-content h1 {
@@ -119,11 +127,14 @@ a {
     text-align: center;
 }
 
+#why h2 {
+    font-weight: bold;
+}
+
 .why-text {
-    font-family: var(--font-headings);
     font-size: 1.75rem;
     line-height: 1.7;
-    max-width: 750px;
+    max-width: 850px;
     margin: 0 auto;
     color: var(--color-text);
 }
@@ -142,6 +153,7 @@ a {
 
 #how-it-works h2 {
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  font-weight: bold;
 }
 
 .steps-grid {
@@ -152,7 +164,7 @@ a {
 
 .step {
   text-align: center;
-  padding: 1.5rem;
+  padding: 1.5rem 0.5rem; 
 }
 
 .step i {
@@ -175,6 +187,7 @@ a {
 
 .step h3 {
   margin-bottom: 0.5rem;
+  font-weight: bold;
 }
 
 .step p {
@@ -185,6 +198,9 @@ a {
 /* Photo Gallery Styles */
 #gallery {
     padding: 5rem 0;
+}
+#gallery h2 {
+    font-weight: bold;
 }
 
 .photo-gallery-grid {
@@ -216,6 +232,7 @@ a {
     padding: 1.5rem;
 }
 
+/* This h3 will correctly use var(--font-headings) */
 .item-caption h3 {
     margin-bottom: 0.5rem;
 }
@@ -296,7 +313,6 @@ a {
 /* Footer */
 footer {
   padding: 2rem 0;
-  text-align: center;
   background-color: #e0e0e0;
   color: var(--color-text-accent);
   font-size: 0.9rem;
