@@ -14,7 +14,8 @@
 
   /* Fonts */
   --font-headings: 'Playfair Display', serif;
-  --font-body: 'Lato', sans-serif;
+  /* UPDATED FONT */
+  --font-body: "Helvetica Neue", Helvetica, Arial, sans-serif;
 
   /* Sizing */
   --container-width: 1100px;
@@ -69,14 +70,14 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start; /* Aligns content to the left */
-  padding: 2rem 5%; /* Adds padding from the edge */
+  align-items: flex-start;
+  padding: 2rem 5%;
   position: relative;
-  background-image: linear-gradient(rgba(44, 32, 23, 0.6), rgba(44, 32, 23, 0.7)), url('images/GroupShot.webp');
+  background-image: linear-gradient(rgba(44, 32, 23, 0.6), rgba(44, 32, 23, 0.7)), url('images/Heroimage.png');
   background-size: cover;
   background-position: center;
   color: var(--color-white);
-  text-align: left; /* Aligns text to the left */
+  text-align: left;
 }
 
 .hero-section .logo {
@@ -84,44 +85,47 @@ a {
   top: 2rem;
   left: 2rem;
   font-family: var(--font-headings);
-  font-size: 1.5rem;
+  font-size: 2.25rem; 
   color: var(--color-white);
   font-weight: 700;
 }
 
 .hero-content {
-    max-width: 50%; /* Restricts the text block to the left third */
+    max-width: 50%;
+}
+
+.hero-content h1,
+.hero-content .tagline {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .hero-content h1 {
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
-  font-size: 4rem; /* Increased font size */
+  font-size: 4rem;
   margin-bottom: 0.5rem;
 }
 
 .hero-content .tagline {
-  font-size: 1.5rem; /* Increased font size */
+  font-size: 1.5rem;
   font-style: italic;
   opacity: 0.9;
   margin-bottom: 2rem;
 }
 
-.cta-button {
-  display: inline-block;
-  background-color: var(--color-action);
-  color: var(--color-white);
-  font-family: var(--font-body);
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  padding: 1rem 2.5rem;
-  border-radius: 50px;
-  transition: background-color 0.3s ease, transform 0.3s ease;
+/* Why Section Styles */
+#why {
+    background-color: var(--color-white);
+    padding: 5rem 0;
+    text-align: center;
 }
 
-.cta-button:hover {
-  background-color: #c96758;
-  transform: translateY(-3px);
+.why-text {
+    font-family: var(--font-headings);
+    font-size: 1.75rem;
+    line-height: 1.7;
+    max-width: 750px;
+    margin: 0 auto;
+    color: var(--color-text);
 }
 
 /* How It Works Section */
@@ -307,11 +311,11 @@ footer {
 }
 @media (max-width: 768px) {
   .hero-content {
-      max-width: 80%; /* Allow more width on smaller screens */
+      max-width: 80%;
   }
 
   .hero-content h1 {
-      font-size: 3rem; /* Adjust font size for mobile */
+      font-size: 3rem;
   }
 
   .steps-grid {
