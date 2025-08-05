@@ -85,11 +85,15 @@
         <section id="ideas-signup">
             <div class="container">
                 <p class="signup-prompt">Want us to include a button that plays your audio? What about a magnetic base so it can float?<br> Send us your ideas! We'd love to hear them. Genuinely.</p>
-                <form name="signup" class="ideas-form" netlify>
-                    <textarea name="idea" placeholder="Your idea goes here!" rows="4" required></textarea>
-                    <div class="email-submit-group">
-                        <input type="email" name="email" placeholder="your.email@example.com" required>
-                        <button type="submit">Send</button>
+              <form name="signup" class="ideas-form" netlify>
+                  <input type="hidden" name="form-name" value="signup" />
+
+                  <textarea name="idea" placeholder="Your idea goes here!" rows="4" required></textarea>
+                  <div class="email-submit-group">
+                      <input type="email" name="email" placeholder="your.email@example.com" required>
+                      <button type="submit">Send</button>
+                  </div>
+              </form>
                     </div>
                 </form>
             </div>
