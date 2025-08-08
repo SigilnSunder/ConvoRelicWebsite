@@ -3,26 +3,25 @@ document.addEventListener('DOMContentLoaded', () => {
     const successMessage = document.getElementById('success-message');
 
     ideaForm.addEventListener('submit', (event) => {
-        // Stop the form from reloading the page
-        event.preventDefault();
+        event.preventDefault(); // Stop the form from submitting the default way
+
+        // ** PASTE THE 'action' URL FROM YOUR GOOGLE FORM HERE **
+        const googleFormActionURL = 'https://docs.google.com/forms/u/1/d/e/1FAIpQLScFh98sHr0Q8lnwreNP8CmCEALRkjlhL9rnIFKnYo5N00ZoQg/formResponse';
 
         const formData = new FormData(ideaForm);
 
-        // Send the data to Netlify
-        fetch('/', {
+        // This sends the data to your Google Form.
+        // We use 'no-cors' mode because Google doesn't send back a standard response,
+        // but the submission will still go through successfully.
+        fetch(googleFormActionURL, {
             method: 'POST',
-            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-            body: new URLSearchParams(formData).toString()
-        })
-        .then(() => {
-            // Success! Hide the form and show the message.
-            ideaForm.style.display = 'none';
-            successMessage.style.display = 'block';
-        })
-        .catch((error) => {
-            // Handle errors if the submission fails
-            console.error('Form submission error:', error);
-            alert('Sorry, there was a problem. Please try again.');
+            mode: 'no-cors', // Important!
+            body: new URLSearchParams(formData)
         });
+
+        // Because we used 'no-cors', we can't check the response.
+        // We'll just assume it was successful.
+        ideaForm.style.display = 'none';
+        successMessage.style.display = 'block';
     });
 });
