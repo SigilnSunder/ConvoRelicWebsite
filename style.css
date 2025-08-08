@@ -52,7 +52,6 @@ h1, h2, h3, h4 {
     font-family: var(--font-body);
 }
 
-
 h1 { font-size: 3rem; }
 h2 { font-size: 2.5rem; text-align: center; margin-bottom: 2rem; }
 h3 { font-size: 1.5rem; }
@@ -80,7 +79,6 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* UPDATED: This is the key change for horizontal centering */
   align-items: center; 
   padding: 2rem 5%;
   position: relative;
@@ -88,7 +86,6 @@ a {
   background-size: cover;
   background-position: center;
   color: var(--color-white);
-  /* UPDATED: This ensures the text inside the block is centered */
   text-align: center;
 }
 
@@ -103,7 +100,6 @@ a {
 }
 
 .hero-content {
-    /* No longer needed with center alignment */
     max-width: 100%;
 }
 
@@ -232,7 +228,6 @@ a {
     padding: 1.5rem;
 }
 
-/* This h3 will correctly use var(--font-headings) */
 .item-caption h3 {
     margin-bottom: 0.5rem;
 }
@@ -243,13 +238,11 @@ a {
     margin-bottom: 0;
 }
 
-
 /* Ideas Signup Section Styles */
-#ideas-signup {
+#signup-section {
   background-color: var(--color-bg-accent);
   color: var(--color-white);
   padding: 5rem 0;
-  text-align: center;
 }
 
 .signup-prompt {
@@ -261,6 +254,7 @@ a {
   margin-right: auto;
   margin-bottom: 2.5rem;
   opacity: 0.95;
+  text-align: center;
 }
 
 .ideas-form {
@@ -316,8 +310,8 @@ footer {
   background-color: #e0e0e0;
   color: var(--color-text-accent);
   font-size: 0.9rem;
+  text-align: center;
 }
-
 
 /* Responsive Styles */
 @media (max-width: 992px) {
