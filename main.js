@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
         event.preventDefault(); // Stop the form from submitting the default way
 
         // ** PASTE THE 'action' URL FROM YOUR GOOGLE FORM HERE **
-        const googleFormActionURL = 'https://docs.google.com/forms/u/1/d/e/1FAIpQLScFh98sHr0Q8lnwreNP8CmCEALRkjlhL9rnIFKnYo5N00ZoQg/formResponse';
+        const googleFormActionURL = 'https://docs.google.com/forms/d/e/1FAIpQLScFh98sHr0Q8lnwreNP8CmCEALRkjlhL9rnIFKnYo5N00ZoQg/formResponse';
 
         const formData = new FormData(ideaForm);
 
@@ -25,3 +25,4 @@ document.addEventListener('DOMContentLoaded', () => {
         successMessage.style.display = 'block';
     });
 });
+
