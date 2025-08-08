@@ -82,10 +82,11 @@
             </div>
         </section>
 
-        <section id="ideas-signup">
+        <section id="signup-section">
             <div class="container">
-                <p class="signup-prompt">Want us to include a button that plays your audio? What about a magnetic base so it can float?<br> Send us your ideas! We'd love to hear them. Genuinely.</p>
-                <form name="signup" class="ideas-form" netlify>
+                
+                <form id="idea-form" name="signup" class="ideas-form" method="POST" data-netlify="true">
+                    <p class="signup-prompt">Want us to include a button that plays your audio? What about a magnetic base so it can float?<br> Send us your ideas! We'd love to hear them. Genuinely.</p>
                     <input type="hidden" name="form-name" value="signup" />
                     <textarea name="idea" placeholder="Your idea goes here!" rows="4" required></textarea>
                     <div class="email-submit-group">
@@ -93,6 +94,11 @@
                         <button type="submit">Send</button>
                     </div>
                 </form>
+        
+                <div id="success-message" style="display: none; text-align: center;">
+                    <h2>Thanks! We'll let you know when we're live.</h2>
+                </div>
+        
             </div>
         </section>
     </main>
